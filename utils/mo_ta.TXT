@@ -1,0 +1,10 @@
+utils/
+  ├── helper.py
+  └── file_handler.py
+
+Chứa các tiện ích backend nhỏ, không thuộc model hay route nào cụ thể.
+Ví dụ: xử lý file, format dữ liệu, logging, upload, resize ảnh, đọc EXIF, v.v.
+
+helper.py → các hàm dùng chung.
+
+file_handler.py → xử lý upload, rename, kiểm tra định dạng ảnh.

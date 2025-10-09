@@ -1,0 +1,18 @@
+ routes/
+   ├── __init__.py
+   ├── home_routes.py
+   ├── api_routes.py
+   ├── history_routes.py
+   └── feedback_routes.py
+
+Chứa toàn bộ định nghĩa đường dẫn (endpoint / router) của web.
+Mỗi file trong đây là một nhóm tính năng.
+Dùng Blueprint để dễ bảo trì và mở rộng.
+
+home_routes.py → giao diện chính, trang chủ.
+
+api_routes.py → xử lý request AI, API JSON, upload ảnh.
+
+history_routes.py → lịch sử phân loại.
+
+feedback_routes.py → phản hồi người dùng.

@@ -1,0 +1,51 @@
+AIScan/	
+│
+├── app.py
+│						
+├── extensions.py               {BE}
+│
+├── routes/						{BE}
+│   ├── __init__.py
+│   ├── home_routes.py
+│   ├── api_routes.py
+│   ├── history_routes.py
+│   └── feedback_routes.py
+│
+├── models/                     {BE}
+│   ├── __init__.py
+│   ├── user.py
+│   ├── image.py
+│   └── feedback.py
+│
+├── model/                      {BE}
+│   └── classifier.py
+│
+├── templates/                  {FE}
+│   ├── base.html
+│   ├── home.html
+│   ├── history.html
+│   ├── feedback.html
+│   └── includes/
+│       ├── header.html
+│       └── sidebar.html
+│
+├── static/                     {FE}
+│   ├── css/
+│   │    ├── base.css
+│   │    ├── home.css
+│   │    └── feedback.css
+│   ├── js/
+│   │    ├── main.js
+│   │    └── home.js
+│   └── images/
+│        ├── logo.svg
+│        └── icons/
+│
+├── utils/                      {BE}
+│   ├── helper.py
+│   └── file_handler.py
+│
+├── instance/                   {BE}
+│   └── aiscan.db
+│
+└── requirements.txt

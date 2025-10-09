@@ -1,0 +1,6 @@
+Flask tạo thư mục này cho dữ liệu cục bộ hoặc cấu hình riêng.
+Thường chứa:
+
+aiscan.db (SQLite DB nội bộ)
+
+config.py (thông tin bảo mật: SECRET_KEY, mật khẩu DB)

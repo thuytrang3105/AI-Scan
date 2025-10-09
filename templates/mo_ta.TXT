@@ -1,0 +1,17 @@
+templates/
+   ├── base.html
+   ├── home.html
+   ├── history.html
+   ├── feedback.html
+   └── includes/
+       ├── header.html
+       └── sidebar.html
+
+Chứa toàn bộ file HTML (frontend), sử dụng Jinja2 template engine.
+Flask sẽ tự động render template ở đây.
+
+base.html → layout chung (header + sidebar).
+
+home.html → trang chính (upload, kết quả).
+
+includes/sidebar.html, includes/header.html → phần giao diện tái sử dụng.

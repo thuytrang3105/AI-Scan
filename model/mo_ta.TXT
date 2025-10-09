@@ -1,0 +1,2 @@
+Đây là nơi chứa mô hình AI hoặc xử lý ML riêng.
+Bạn có thể dùng file classifier.py để nạp model, predict, và trả kết quả.

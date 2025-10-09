@@ -1,0 +1,14 @@
+ models/
+  ├── __init__.py
+  ├── user.py
+  ├── image.py
+  └── feedback.py
+
+Định nghĩa các bảng cơ sở dữ liệu (ORM models).
+Mỗi file đại diện cho 1 loại dữ liệu trong DB.
+
+user.py → bảng người dùng.
+
+image.py → bảng ảnh tải lên.
+
+feedback.py → phản hồi AI.

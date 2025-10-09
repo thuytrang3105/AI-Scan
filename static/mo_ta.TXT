@@ -1,0 +1,20 @@
+static/
+   ├── css/
+   │    ├── base.css
+   │    ├── home.css
+   │    └── feedback.css
+   ├── js/
+   │    ├── main.js
+   │    └── home.js
+   └── images/
+        ├── logo.svg
+        └── icons/
+
+Chứa toàn bộ file tĩnh (CSS, JS, ảnh).
+Flask sẽ tự phục vụ file tĩnh từ đây khi render HTML.
+
+css/ → style cho từng phần (base, home, feedback...)
+
+js/ → logic client-side.
+
+images/ → icon, logo, ảnh demo.
