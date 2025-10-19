@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard - AI Scan{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+{% endblock %}
+
+{% block content %}
+<main class="p-6 max-w-7xl mx-auto page-transition">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-8">
+    <div class="stats-card rounded-xl p-6 border-l-4 border-blue-500">
+      <div class="flex items-center justify-between">
+        <div>
+          <p class="text-gray-600 text-sm font-medium">Ảnh đã quét</p>
+          <p class="stat-number">2,847</p>
+          <p class="text-green-600 text-xs font-medium">+12% tuần này</p>
+        </div>
+        <div class="text-4xl">🖼️</div>
+      </div>
+    </div>
+
+    <div class="stats-card rounded-xl p-6 border-l-4 border-green-500">
+      <div class="flex items-center justify-between">
+        <div>
+          <p class="text-gray-600 text-sm font-medium">Độ chính xác</p>
+          <p class="stat-number">94.2%</p>
+          <p class="text-green-600 text-xs font-medium">+2.1% tháng này</p>
+        </div>
+        <div class="text-4xl">🤖</div>
+      </div>
+    </div>
+
+    <div class="stats-card rounded-xl p-6 border-l-4 border-yellow-500">
+      <div class="flex items-center justify-between">
+        <div>
+          <p class="text-gray-600 text-sm font-medium">Thời gian xử lý</p>
+          <p class="stat-number">1.3s</p>
+          <p class="text-blue-600 text-xs font-medium">Trung bình/ảnh</p>
+        </div>
+        <div class="text-4xl">⏱️</div>
+      </div>
+    </div>
+
+    <div class="stats-card rounded-xl p-6 border-l-4 border-purple-500">
+      <div class="flex items-center justify-between">
+        <div>
+          <p class="text-gray-600 text-sm font-medium">Model hiện tại</p>
+          <p class="text-2xl font-bold text-purple-600">ResNet-50</p>
+          <p class="text-gray-500 text-xs">v2.1.4</p>
+        </div>
+        <div class="text-4xl">🧠</div>
+      </div>
+    </div>
+
+    <div class="stats-card rounded-xl p-6 border-l-4 border-red-500">
+      <div class="flex items-center justify-between">
+        <div>
+          <p class="text-gray-600 text-sm font-medium">Ảnh chỉnh sửa</p>
+          <p class="stat-number">164</p>
+          <p class="text-orange-600 text-xs font-medium">5.8% tổng số</p>
+        </div>
+        <div class="text-4xl">🔁</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Charts -->
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+    <div class="bg-white rounded-xl shadow-lg p-6">
+      <h3 class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+        📈 Độ chính xác theo thời gian
+      </h3>
+      <canvas id="accuracyChart"></canvas>
+    </div>
+
+    <div class="bg-white rounded-xl shadow-lg p-6">
+      <h3 class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+        🥧 Phân bố loại ảnh
+      </h3>
+      <canvas id="categoryChart"></canvas>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <div class="bg-white rounded-xl shadow-lg p-6">
+      <h3 class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+        📊 Top 5 nhãn phổ biến nhất
+      </h3>
+      <canvas id="topLabelsChart"></canvas>
+    </div>
+
+    <div class="bg-white rounded-xl shadow-lg p-6">
+      <h3 class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+        🔥 Tần suất lỗi theo loại đối tượng
+      </h3>
+      <div id="heatmapContainer" class="grid grid-cols-4 gap-2"></div>
+    </div>
+  </div>
+</main>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="{{ url_for('static', filename='JS/dashboard.js') }}"></script>
+{% endblock %}

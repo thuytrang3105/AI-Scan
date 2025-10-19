@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block title %}Trang chủ - AI Scan Pro{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+{% endblock %}
+
+{% block content %}
+<section class="relative overflow-hidden min-h-[90vh] flex flex-col lg:flex-row items-center justify-center text-center lg:text-left gap-10 px-8 page-transition">
+  {{ !-- Hero Section --}}
+  <div class="max-w-xl space-y-6 z-10">
+    <h1 class="text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-violet-500 to-blue-500 drop-shadow-lg">
+      Công cụ quét & nhận diện hình ảnh thông minh
+    </h1>
+
+    <p class="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
+      AI Scan Pro cho phép bạn tải lên ảnh và để trí tuệ nhân tạo tự động phân loại, 
+      nhận diện vật thể với độ chính xác cao — nhanh, mượt, và hoàn toàn miễn phí!
+    </p>
+
+    <div class="flex flex-wrap justify-center lg:justify-start gap-4 mt-6">
+      <a href="" class="px-6 py-3 rounded-xl bg-violet-600 text-white shadow-md hover:shadow-violet-400/50 hover:scale-105 transition">
+        🚀 Đăng nhập
+      </a>
+      <a href="" class="px-6 py-3 rounded-xl bg-white border border-violet-600 text-violet-700 hover:bg-violet-50 shadow-sm transition">
+        👁️ Xem demo
+      </a>
+    </div>
+  </div>
+  {{ !-- Hero Image --}}
+  <div class="relative w-[350px] lg:w-[500px]">
+    <img src="{{ url_for('static', filename='images/ai_scan.png') }}" 
+         alt="AI Scan Illustration"
+         class="floating-image rounded-2xl shadow-2xl border border-violet-400/30">
+    <div class="absolute inset-0 bg-gradient-radial from-violet-400/30 via-transparent to-transparent blur-3xl"></div>
+  </div>
+
+</section>
+
+<section class="py-16 bg-gradient-to-r from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-900">
+  <div class="max-w-5xl mx-auto px-6 text-center space-y-12">
+    <h2 class="text-3xl font-bold text-gray-800 dark:text-gray-100">💡 Thông tin dự án</h2>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="info-card">
+        <h3 class="text-xl font-semibold text-violet-600">🎯 Mục tiêu</h3>
+        <p>Học tập & thực hành Machine Learning, xây dựng hệ thống phân loại ảnh hoàn chỉnh.</p>
+      </div>
+
+      <div class="info-card">
+        <h3 class="text-xl font-semibold text-violet-600">🧠 Công nghệ</h3>
+        <p>Flask (Back-end), React (Front-end), TensorFlow / PyTorch (AI), MongoDB / SQLite.</p>
+      </div>
+
+      <div class="info-card">
+        <h3 class="text-xl font-semibold text-violet-600">📩 Liên hệ</h3>
+        <p>Email: <span class="text-violet-500 font-medium">support@aiscan.vn</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='JS/home.js') }}"></script>
+{% endblock %}

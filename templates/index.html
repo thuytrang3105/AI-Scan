@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block title %}Phân loại ảnh{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+{% endblock %}
+
+{% block content %}
+<div id="classifyPage" class="page-transition">
+  <section id="uploadZone" class="upload-zone bg-gradient-to-br from-slate-100 to-blue-50 rounded-3xl p-16 text-center mb-8 cursor-pointer">
+    <input type="file" id="fileInput" accept="image/*" hidden>
+    <div class="upload-icon text-4xl">⬆️</div>
+    <p class="text-lg font-semibold">Kéo và thả ảnh vào đây<br><span class="text-gray-600">hoặc chọn từ thiết bị</span></p>
+    <button class="btn btn-primary mt-4">Chọn ảnh</button>
+  </section>
+
+  <section id="processSection" class="hidden text-center">
+    <button id="processBtn" class="px-12 py-4 neural-network text-white rounded-2xl hover:shadow-2xl transition-all text-lg font-bold">
+      Phân loại ảnh với AI
+    </button>
+  </section>
+
+  <section id="resultsArea" class="hidden mt-8">
+    <div class="grid grid-cols-2 gap-8">
+      <div>
+        <h3 class="text-xl font-bold mb-4">Ảnh gốc</h3>
+        <img id="previewImage" class="rounded-xl shadow-lg border-2 border-gray-200 w-full h-80 object-cover">
+      </div>
+      <div>
+        <h3 class="text-xl font-bold mb-4">Kết quả phân loại</h3>
+        <div id="classificationResults" class="space-y-3"></div>
+      </div>
+    </div>
+
+    <div class="flex justify-center space-x-4 mt-10">
+      <button id="reclassifyBtn" class="px-6 py-3 bg-gray-200 rounded-xl hover:bg-gray-300">Phân loại lại</button>
+      <button id="saveBtn" class="px-6 py-3 bg-blue-600 text-white rounded-xl">Lưu kết quả</button>
+      <button id="feedbackBtn" class="px-6 py-3 bg-pink-500 text-white rounded-xl">Gửi phản hồi</button>
+    </div>
+  </section>
+</div>
+
+<aside class="chatbox fixed right-4 bottom-4 w-96 bg-white rounded-3xl shadow-xl border border-gray-100">
+  <div class="chat-header p-4 neural-network text-white rounded-t-3xl font-semibold">AI Assistant</div>
+  <div id="chatMessages" class="chat-messages p-4 h-80 overflow-y-auto">
+    <div class="ai-msg p-3 rounded-lg bg-gray-100 mb-2">Xin chào! Hãy tải lên một ảnh để tôi giúp bạn.</div>
+  </div>
+  <div class="chat-input flex p-3 border-t border-gray-200">
+    <input type="text" id="chatInput" placeholder="Nhập tin nhắn..." class="flex-1 border rounded-xl px-3 py-2">
+    <button id="sendBtn" class="ml-2 px-4 py-2 neural-network text-white rounded-xl">Gửi</button>
+  </div>
+</aside>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='JS/main.js') }}"></script>
+{% endblock %}

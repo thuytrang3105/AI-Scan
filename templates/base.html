@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}AI Scan Pro{% endblock %}</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class', // Kích hoạt chế độ tối bằng class 'dark'
+    }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+  {% block extra_css %}{% endblock %}
+</head>
+<body class="bg-slate-50 min-h-screen">
+
+  {% include 'partials/sidebar.html' %}
+  {% include 'partials/header.html' %}
+
+  <main class="ml-72 p-8">
+    {% block content %}{% endblock %}
+  </main>
+
+  <script src="{{ url_for('static', filename='JS/base.js') }}"></script>
+  {% block extra_js %}{% endblock %}
+</body>
+</html>
