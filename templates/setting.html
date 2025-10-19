@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% block title %}Cài đặt giao diện & người dùng{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/setting.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="max-w-5xl mx-auto p-8 space-y-8 page-transition">
+
+  <h2 class="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-6">⚙️ Cài đặt cá nhân</h2>
+
+  <section class="setting-card bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-6 space-y-5">
+    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-100">🎨 Giao diện & Chủ đề</h3>
+
+    <!-- Chuyển Dark/Light mode -->
+    <div class="flex items-center justify-between">
+      <span class="text-gray-700 dark:text-gray-300">Chế độ hiển thị</span>
+      <button id="toggleTheme"
+        class="px-4 py-2 bg-violet-600 text-white rounded-lg hover:bg-violet-700 transition">
+        🌙 Chuyển sáng/tối
+      </button>
+    </div>
+
+    <div>
+      <p class="text-gray-700 dark:text-gray-300 mb-2">Màu chủ đạo:</p>
+      <div class="flex items-center gap-3">
+        <button onclick="changeThemeColor('#7C3AED')" class="w-8 h-8 rounded-full bg-purple-500 theme-dot"></button>
+        <button onclick="changeThemeColor('#2563EB')" class="w-8 h-8 rounded-full bg-blue-500 theme-dot"></button>
+        <button onclick="changeThemeColor('#F59E0B')" class="w-8 h-8 rounded-full bg-yellow-500 theme-dot"></button>
+        <button onclick="changeThemeColor('#10B981')" class="w-8 h-8 rounded-full bg-green-500 theme-dot"></button>
+        <button onclick="changeThemeColor('#EF4444')" class="w-8 h-8 rounded-full bg-red-500 theme-dot"></button>
+      </div>
+    </div>
+
+    <div>
+      <p class="text-gray-700 dark:text-gray-300 mb-2">Font chữ:</p>
+      <select id="fontSelector" class="p-2 border rounded-lg dark:bg-slate-700 dark:text-gray-200">
+        <option value="'Inter', sans-serif">Inter</option>
+        <option value="'Poppins', sans-serif">Poppins</option>
+        <option value="'Roboto', sans-serif">Roboto</option>
+      </select>
+    </div>
+  </section>
+
+  <section class="setting-card bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-6 space-y-5">
+    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-100">👤 Người dùng & Bảo mật</h3>
+
+    <div class="flex items-center space-x-4">
+      <img src="https://api.dicebear.com/9.x/bottts/svg?seed=AIUser"
+           class="w-16 h-16 rounded-full border-2 border-violet-500 shadow">
+      <div>
+        <p class="font-semibold text-gray-800 dark:text-gray-100">AI_Admin</p>
+        <p class="text-sm text-gray-500 dark:text-gray-400">admin@aiscan.vn</p>
+      </div>
+    </div>
+
+    <div class="space-y-3 mt-4">
+      <button class="w-full py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">🔑 Đổi mật khẩu</button>
+      <button class="w-full py-2 bg-violet-600 text-white rounded-lg hover:bg-violet-700 transition">🔒 Bật xác thực 2 bước</button>
+      <button class="w-full py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition">🚪 Đăng xuất</button>
+    </div>
+  </section>
+
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='JS/setting.js') }}"></script>
+{% endblock %}

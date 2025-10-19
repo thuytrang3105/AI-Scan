@@ -1,15 +1,23 @@
-//“cổng chính” của ứng dụng Flask. Dùng để khởi tạo app, load config, đăng ký routes (Blueprints), và chạy server.
-from flask import Flask
-from extensions import db
-from routes.home_routes import home_bp
-from routes.api_routes import api_bp
+from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__)
-app.config.from_pyfile('config.py')   
-db.init_app(app)
 
-//app.register_blueprint(home_bp)
-//app.register_blueprint(api_bp)
+@app.route('/')
+def home():
+    return render_template('home.html')
+
+@app.route('/index')
+def index():
+    return render_template('index.html', active_page='index')
+
+@app.route('/dashboard')
+def dashboard():
+    return render_template('dashboard.html', active_page='dashboard')
+
+@app.route('/setting')
+def setting():
+    return render_template('setting.html', active_page='setting')
+
 
 if __name__ == '__main__':
     app.run(debug=True)

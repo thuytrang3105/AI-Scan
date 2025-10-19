@@ -1,0 +1,22 @@
+.setting-card {
+  transition: all 0.3s ease;
+  border: 1px solid rgba(124, 58, 237, 0.1);
+}
+
+.setting-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(124, 58, 237, 0.15);
+}
+
+.theme-dot {
+  border: 2px solid white;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.theme-dot:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+
+body, .setting-card {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
