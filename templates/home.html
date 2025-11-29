@@ -7,7 +7,7 @@
 
 {% block content %}
 <section class="relative overflow-hidden min-h-[90vh] flex flex-col lg:flex-row items-center justify-center text-center lg:text-left gap-10 px-8 page-transition">
-  {{ !-- Hero Section --}}
+  
   <div class="max-w-xl space-y-6 z-10">
     <h1 class="text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-violet-500 to-blue-500 drop-shadow-lg">
       Công cụ quét & nhận diện hình ảnh thông minh
@@ -19,7 +19,7 @@
     </p>
 
     <div class="flex flex-wrap justify-center lg:justify-start gap-4 mt-6">
-      <a href="" class="px-6 py-3 rounded-xl bg-violet-600 text-white shadow-md hover:shadow-violet-400/50 hover:scale-105 transition">
+      <a href="dashboard" class="px-6 py-3 rounded-xl bg-violet-600 text-white shadow-md hover:shadow-violet-400/50 hover:scale-105 transition">
         🚀 Đăng nhập
       </a>
       <a href="" class="px-6 py-3 rounded-xl bg-white border border-violet-600 text-violet-700 hover:bg-violet-50 shadow-sm transition">
@@ -27,9 +27,9 @@
       </a>
     </div>
   </div>
-  {{ !-- Hero Image --}}
+  
   <div class="relative w-[350px] lg:w-[500px]">
-    <img src="{{ url_for('static', filename='images/ai_scan.png') }}" 
+    <img src="{{ url_for('static', filename='images/pic_homepng.png') }}" 
          alt="AI Scan Illustration"
          class="floating-image rounded-2xl shadow-2xl border border-violet-400/30">
     <div class="absolute inset-0 bg-gradient-radial from-violet-400/30 via-transparent to-transparent blur-3xl"></div>
